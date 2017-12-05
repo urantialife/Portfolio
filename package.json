@@ -1,0 +1,38 @@
+{
+  "name": "alex-richey-dev",
+  "version": "1.2.0",
+  "description": "My development portfolio",
+  "scripts": {
+    "postinstall": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderRichey/AlexanderRichey.github.io.git"
+  },
+  "author": "Alexander Richey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderRichey/AlexanderRichey.github.io/issues"
+  },
+  "homepage": "https://github.com/AlexanderRichey/AlexanderRichey.github.io#readme",
+  "dependencies": {
+    "aos": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "compression-webpack-plugin": "^1.0.1",
+    "copy-webpack-plugin": "^4.2.3",
+    "css-loader": "^0.28.7",
+    "cssnano": "^3.10.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "node-sass": "^4.7.2",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "sass-loader": "^6.0.6",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0"
+  }
+}
