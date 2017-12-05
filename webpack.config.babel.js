@@ -75,6 +75,11 @@ export default {
         from: 'src/*.html',
         to: path.join(__dirname, 'dst'),
         flatten: true
+      },
+      {
+        from: 'src/CNAME',
+        to: path.join(__dirname, 'dst'),
+        flatten: true
       }
     ])
   ],
