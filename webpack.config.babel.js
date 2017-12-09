@@ -77,6 +77,11 @@ export default {
         flatten: true
       },
       {
+        from: 'src/*.txt',
+        to: path.join(__dirname, 'dst'),
+        flatten: true
+      },
+      {
         from: 'src/CNAME',
         to: path.join(__dirname, 'dst'),
         flatten: true
