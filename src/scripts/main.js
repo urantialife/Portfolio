@@ -7,19 +7,7 @@ import Slider from './slider'
 import intro from './intro'
 import { scrollTo, debounce } from './utils'
 
-document.addEventListener('DOMContentLoaded', () => {
-  AOS.init({
-    duration: 600,
-    disable: 'mobile',
-    once: true
-  })
-  window.onload = AOS.refreshHard
-  intro()
-  installNavListeners()
-  setUpSlider()
-})
-
-function installNavListeners () {
+const installNavListeners = function installNavListeners () {
   const navContainer = document.getElementById('nav-container')
   document.addEventListener('scroll', debounce((e) => {
     if (document.documentElement.scrollTop > 10) {
@@ -39,7 +27,7 @@ function installNavListeners () {
   })
 }
 
-function setUpSlider () {
+const setUpSlider = function setUpSlider () {
   const sliderNode = document.getElementById('slider')
   const left = document.getElementById('left')
   const right = document.getElementById('right')
@@ -47,4 +35,22 @@ function setUpSlider () {
 
   left.addEventListener('click', sliderToken.prevSlide)
   right.addEventListener('click', sliderToken.nextSlide)
+}
+
+const init = function init () {
+  AOS.init({
+    duration: 600,
+    disable: 'mobile',
+    once: true
+  })
+  window.onload = AOS.refreshHard
+  intro()
+  installNavListeners()
+  setUpSlider()
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init)
+} else {
+  init()
 }
