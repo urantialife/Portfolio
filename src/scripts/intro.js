@@ -1,27 +1,28 @@
 export default function intro () {
-  const introText = "I'm a software developer... >> Scroll for cool stuff!"
-  const lineOne = 'line-one'
-  const lineTwo = 'line-two'
+  const introText = ">> I'm a software developer... >> Scroll for cool stuff!"
+  const lineOne = document.getElementById('line-one')
+  const lineTwo = document.getElementById('line-two')
   const arrowEl = document.getElementById('arrow')
+  const intervalTimeout = 40
+  const startDelay = 200
 
   let i = 0
   let current = lineOne
   let animationToken
 
-  const step = ts => {
-    if (i === introText.length) {
-      arrowEl.style.opacity = 1
-      return cancelAnimationFrame(animationToken)
-    }
+  setTimeout(() => {
+    let intervalToken = setInterval(() => {
+      if (i > 29) {
+        current = lineTwo
+      }
 
-    if (i > 27) current = lineTwo
-    document.getElementById(current).innerHTML += introText[i]
-    i += 1
+      current.innerHTML += introText[i]
+      i += 1
 
-    setTimeout(() => {
-      animationToken = requestAnimationFrame(step)
-    }, 35)
-  }
-
-  animationToken = requestAnimationFrame(step)
+      if (i === introText.length) {
+        arrowEl.style.opacity = 1
+        clearInterval(intervalToken)
+      }
+    }, intervalTimeout)
+  }, startDelay)
 }
