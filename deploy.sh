@@ -1,5 +1,5 @@
 mkdir -p dst
 rm -rf dst/*
-webpack
+npm run build
 cd dst
 surge
